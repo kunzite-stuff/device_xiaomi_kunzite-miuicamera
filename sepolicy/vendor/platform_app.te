@@ -1,79 +1,32 @@
-binder_use(platform_app)
-binder_call(platform_app, hal_camera_default)
-
-allow platform_app adsprpcd_file:dir { open read search };
-
-allow platform_app vendor_camera_data_file:dir { append map r_dir_perms write };
-allow platform_app vendor_camera_data_file:file { getattr open read };
-
-allow platform_app app_data_file:file execute;
-
-# Properties
-get_prop(platform_app, vendor_audio_prop)
-get_prop(platform_app, vendor_camera_sensor_prop)
-get_prop(platform_app, vendor_display_prop)
-get_prop(platform_app, vendor_panel_info_prop)
-get_prop(platform_app, vendor_camera_prop)
-get_prop(platform_app, vendor_camera_xiaomi_prop)
-
-# MiuiCamera kunzite: app runs as versioned platform_app_36 domain.
-# NOTE: direct DSP (xdsp/cdsp fastrpc) access is REQUIRED (QNN/face
-# plugins abort mode switch without it, proven live), but QCOM base
-# neverallows appdomain DSP chr access with no compliant grant path
-# (hal_client_domain only covers HAL domains). Confine to permissive
-# on this single versioned app domain instead of global permissive.
-permissive platform_app_36;
-# Rules below proven live via Magisk module (enforcing OK, all modes).
+# HAL: camera provider and qspmhal
 binder_call(platform_app_36, hal_camera_default)
 binder_call(platform_app_36, vendor_hal_qspmhal_default)
-binder_call(platform_app, vendor_hal_qspmhal_default)
-
-# Full-res snapshot + algo DSP
+hal_client_domain(platform_app_36, vendor_hal_qspmhal)
 allow platform_app_36 hal_camera_default:fd use;
-allow platform_app hal_camera_default:fd use;
-allow priv_app hal_camera_default:fd use;
 
-allow platform_app_36 adsprpcd_file:dir { getattr open read search watch };
-allow platform_app adsprpcd_file:dir { getattr watch };
-allow priv_app adsprpcd_file:dir { getattr open read search watch };
-
-allow platform_app_36 vendor_camera_data_file:dir { append getattr ioctl lock map open read search write };
-allow priv_app vendor_camera_data_file:dir { append getattr ioctl lock map open read search write };
-allow platform_app_36 vendor_camera_data_file:file { getattr open read };
-allow priv_app vendor_camera_data_file:file { getattr open read };
-
+# Parallel snapshot pipeline (ParallelDataZip)
+allow platform_app_36 system_linker_exec:file execute_no_trans;
 allow platform_app_36 app_data_file:file execute;
 
-# libmialgoengine2.so is mislabeled vendor_file (fixed via device
-# file_contexts); executed vendor libs must be labeled same_process_hal_file
-# (appdomain vendor_file exec/read is neverallowed) - see device tree.
-allow platform_app_36 vendor_file:dir { getattr open read search watch };
-allow platform_app vendor_file:dir { getattr open read search watch };
-allow priv_app vendor_file:dir { getattr open read search watch };
-allow platform_app_36 same_process_hal_file:file { execute getattr map open read };
-allow platform_app same_process_hal_file:file { execute getattr map open read };
-allow priv_app same_process_hal_file:file { execute getattr map open read };
+# FastRPC / cdsp (QNN/HTP). Needs the platform_app_36 exceptions in the
+# neverallows of system/sepolicy and device/qcom/sepolicy_vndr (sm8750).
+allow platform_app_36 vendor_xdsp_device:chr_file { read open ioctl };
+allow platform_app_36 adsprpcd_file:dir { getattr open read search };
+allow platform_app_36 adsprpcd_file:file { read open getattr };
 
-# NOTE: appdomain direct DSP (xdsp/qdsp chr_file) access is neverallowed
-# by QCOM base policy. Proven unnecessary live: facesr/QNN works without
-# it (DSP is driven via HAL domain, which already has xdsp/qdsp access).
-# Denials for it are benign noise.
+# Camera data
+allow platform_app_36 vendor_camera_data_file:dir { append getattr map open read search write };
+allow platform_app_36 vendor_camera_data_file:file { getattr open read };
 
-# Properties (versioned + priv-app)
+# Properties
 get_prop(platform_app_36, vendor_audio_prop)
 get_prop(platform_app_36, vendor_camera_prop)
 get_prop(platform_app_36, vendor_camera_sensor_prop)
 get_prop(platform_app_36, vendor_camera_xiaomi_prop)
 get_prop(platform_app_36, vendor_display_prop)
 get_prop(platform_app_36, vendor_panel_info_prop)
-get_prop(priv_app, vendor_audio_prop)
-get_prop(priv_app, vendor_camera_prop)
-get_prop(priv_app, vendor_camera_sensor_prop)
-get_prop(priv_app, vendor_camera_xiaomi_prop)
-get_prop(priv_app, vendor_display_prop)
-get_prop(priv_app, vendor_panel_info_prop)
 
-# proc pressure stats polling
+# Pressure stall info polling
 allow platform_app_36 proc_pressure_cpu:file { getattr open read };
 allow platform_app_36 proc_pressure_io:file { getattr open read };
 allow platform_app_36 proc_pressure_mem:file { getattr open read };
