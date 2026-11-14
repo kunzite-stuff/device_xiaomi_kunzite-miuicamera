@@ -1,21 +1,33 @@
 not_recovery(`
+typeattribute platform_app_36 system_executes_vendor_violators;
+
+hal_client_domain(platform_app_36, vendor_hal_qspmhal)
+
 binder_use(platform_app_36)
 binder_call(platform_app_36, hal_camera_default)
 
-allow platform_app_36 hal_aidlbgservice_service:service_manager find;
+# FastRPC / DSP (QNN)
+allow platform_app_36 adsprpcd_file:dir { getattr open read search watch };
+allow platform_app_36 adsprpcd_file:file { getattr open read map };
+allow platform_app_36 vendor_qdsp_device:chr_file { ioctl read open };
+allow platform_app_36 vendor_xdsp_device:chr_file { ioctl read open };
 
-allow platform_app_36 adsprpcd_file:dir { open read search };
+# Vendor libs and dirs (rfsa/adsp, libc++_shared, libwa_dof)
+allow platform_app_36 vendor_file:file { getattr open read map execute };
+allow platform_app_36 vendor_file:dir { getattr open read search watch };
 
 allow platform_app_36 vendor_camera_data_file:dir { append map r_dir_perms write };
 allow platform_app_36 vendor_camera_data_file:file { getattr open read };
 
 allow platform_app_36 app_data_file:file execute;
 
+# PSI
+allow platform_app_36 proc_pressure_mem:file { read open getattr };
+allow platform_app_36 proc_pressure_cpu:file { read open getattr };
+allow platform_app_36 proc_pressure_io:file { read open getattr };
+
 # Properties
-get_prop(platform_app_36, vendor_audio_prop)
-get_prop(platform_app_36, vendor_camera_p3enable_prop)
 get_prop(platform_app_36, vendor_camera_sensor_prop)
 get_prop(platform_app_36, vendor_display_prop)
-get_prop(platform_app_36, vendor_displayfeature_prop)
 get_prop(platform_app_36, vendor_panel_info_prop)
 ')
