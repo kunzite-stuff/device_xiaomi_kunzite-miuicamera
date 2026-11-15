@@ -1,0 +1,26 @@
+From c67078ed11a1cc67b744a37ec9a97a15b0135ac8 Mon Sep 17 00:00:00 2001
+From: kleidione Freitas <kleidione@gmail.com>
+Date: Sun, 15 Nov 2026 07:15:32 -0300
+Subject: [PATCH 16/16] Swap chroma from plane[2] to keep V/U alignment
+
+Signed-off-by: kleidione <kleidione@gmail.com>
+---
+ .../com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali       | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/smali_classes5/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali b/smali_classes5/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
+index 9b6db83d..b44c4683 100644
+--- a/smali_classes5/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
++++ b/smali_classes5/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
+@@ -107,7 +107,7 @@
+ 
+     if-ne v6, v7, :cond_planar
+ 
+-    invoke-static {p0, v4}, Lcom/xiaomi/camera/imagecodec/impl/KunziteUvSwap;->processPlane(Landroid/media/Image;Landroid/media/Image$Plane;)Z
++    invoke-static {p0, v3}, Lcom/xiaomi/camera/imagecodec/impl/KunziteUvSwap;->processPlane(Landroid/media/Image;Landroid/media/Image$Plane;)Z
+     move-result v3
+ 
+     if-eqz v3, :cond_return
+-- 
+2.56.1
+
