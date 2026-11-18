@@ -30,6 +30,7 @@ allow platform_app_36 proc_pressure_cpu:file { read open getattr };
 allow platform_app_36 proc_pressure_io:file { read open getattr };
 
 # Properties
+get_prop(platform_app_36, vendor_audio_prop)
 get_prop(platform_app_36, vendor_camera_sensor_prop)
 get_prop(platform_app_36, vendor_display_prop)
 get_prop(platform_app_36, vendor_panel_info_prop)
