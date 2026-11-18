@@ -6,6 +6,9 @@ hal_client_domain(platform_app_36, vendor_hal_qspmhal)
 binder_use(platform_app_36)
 binder_call(platform_app_36, hal_camera_default)
 
+# Cgroup
+allow platform_app_36 cgroup_v2:dir search;
+
 # FastRPC / DSP (QNN)
 allow platform_app_36 adsprpcd_file:dir { getattr open read search watch };
 allow platform_app_36 adsprpcd_file:file { getattr open read map };
