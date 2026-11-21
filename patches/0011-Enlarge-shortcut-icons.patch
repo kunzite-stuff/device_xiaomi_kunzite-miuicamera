@@ -1,7 +1,7 @@
-From 34b58ad7009cad8015140cb3cae939fa8da7e1ba Mon Sep 17 00:00:00 2001
+From 959172008d5ee6ff00d8c6d4937c6381e70ef7ab Mon Sep 17 00:00:00 2001
 From: kleidione Freitas <kleidione@gmail.com>
 Date: Sun, 15 Nov 2026 22:12:41 -0300
-Subject: [PATCH 17/18] Enlarge shortcut icons
+Subject: [PATCH 11/14] Enlarge shortcut icons
 
 Signed-off-by: kleidione <kleidione@gmail.com>
 ---

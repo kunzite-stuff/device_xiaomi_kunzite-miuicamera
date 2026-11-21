@@ -1,7 +1,7 @@
-From 9fb9896943a224185ca39e47c243b340c174382c Mon Sep 17 00:00:00 2001
+From ca4fae83986682ba4448568084595e84bee907f5 Mon Sep 17 00:00:00 2001
 From: heybyben <heybyben@gmail.com>
 Date: Sat, 14 Nov 2026 20:13:55 -0300
-Subject: [PATCH 14/14] Force NV21 chroma order in QuickView JPEG encode
+Subject: [PATCH 08/14] Force NV21 chroma order in QuickView JPEG encode
 
 ---
  smali_classes2/C9/e.smali | 4 ++++
@@ -23,5 +23,5 @@ index 7e5c3017..c672e2e2 100644
  
      const/4 v1, 0x1
 -- 
-2.56.0
+2.56.1
 

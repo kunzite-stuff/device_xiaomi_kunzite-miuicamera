@@ -1,7 +1,7 @@
 From c3e4d3e6b8818b2f963b7d39a6f0eb02201267f6 Mon Sep 17 00:00:00 2001
 From: Arian <arian.kulmer@web.de>
 Date: Sat, 14 Nov 2026 19:17:22 -0300
-Subject: [PATCH 06/13] Revert-icon-to-cupid-V14.0.2.0.TLCMICM
+Subject: [PATCH 06/14] Revert-icon-to-cupid-V14.0.2.0.TLCMICM
 
 ---
  res/mipmap-anydpi-v26/etk.xml |   5 +++++
@@ -10812,5 +10812,5 @@ z`+D75>B*^bOYAbzvZ7K}#WgLvbMtcjcgAZ|EUzlP`~CkvV^4b2_49Xfj2IXg7(8A5
 KT-G@yGywqqF<=(}
 
 -- 
-2.56.0
+2.56.1
 

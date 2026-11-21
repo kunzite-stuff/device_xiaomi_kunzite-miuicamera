@@ -1,7 +1,7 @@
-From d5c5c1a68b0b9b7fd6c97e4d8e35ea0acebfdceb Mon Sep 17 00:00:00 2001
+From c9890e6c4b3225a535840b37555c013204136637 Mon Sep 17 00:00:00 2001
 From: heybyben <heybyben@gmail.com>
 Date: Sat, 14 Nov 2026 21:54:09 -0300
-Subject: [PATCH 15/15] Fix snapshot color swap only
+Subject: [PATCH 09/14] Fix snapshot color swap only
 
 Signed-off-by: kleidione <kleidione@gmail.com>
 ---
@@ -498,7 +498,7 @@ index 00000000..9b6db83d
 +    return p0
 +.end method
 diff --git a/smali_classes5/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali b/smali_classes5/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali
-index e020b86f..912a99f9 100644
+index 3c11c9e0..581a7df4 100644
 --- a/smali_classes5/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali
 +++ b/smali_classes5/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali
 @@ -1945,6 +1945,8 @@
@@ -511,5 +511,5 @@ index e020b86f..912a99f9 100644
  
      invoke-virtual {v13}, Lcom/xiaomi/camera/imagecodec/ReprocessData;->getImageName()Ljava/lang/String;
 -- 
-2.56.0
+2.56.1
 

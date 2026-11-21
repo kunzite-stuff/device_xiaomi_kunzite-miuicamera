@@ -1,7 +1,7 @@
-From 7d0163ffa59647820be2faa9c06f1e8a6b36cebe Mon Sep 17 00:00:00 2001
+From 776fdb78c79b7e46385af65ea3c9a35d37007ed0 Mon Sep 17 00:00:00 2001
 From: Ido <dev.xyzuniverse@gmail.com>
 Date: Sun, 15 Nov 2026 22:15:22 -0300
-Subject: [PATCH 18/18] Add livephoto support
+Subject: [PATCH 12/14] Add livephoto support
 
 ---
  smali_classes2/Sg/I.smali | 223 +-------------------------------------

@@ -1,7 +1,7 @@
-From f35a37375ab62b17a60ef4a10f8ac94e713bfde0 Mon Sep 17 00:00:00 2001
+From 066a930e46a3282ec363bd102f9406ae2b3fb3b7 Mon Sep 17 00:00:00 2001
 From: kleidione Freitas <kleidione@gmail.com>
 Date: Sat, 14 Nov 2026 19:11:28 -0300
-Subject: [PATCH 13/13] Use input size for reprocess output
+Subject: [PATCH 13/14] Use input size for reprocess output
 
 Signed-off-by: kleidione <kleidione@gmail.com>
 ---
@@ -9,7 +9,7 @@ Signed-off-by: kleidione <kleidione@gmail.com>
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/smali_classes5/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali b/smali_classes5/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali
-index 3c11c9e0..e020b86f 100644
+index 581a7df4..912a99f9 100644
 --- a/smali_classes5/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali
 +++ b/smali_classes5/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali
 @@ -546,11 +546,11 @@
@@ -27,5 +27,5 @@ index 3c11c9e0..e020b86f 100644
      move-result v8
  
 -- 
-2.56.0
+2.56.1
 
