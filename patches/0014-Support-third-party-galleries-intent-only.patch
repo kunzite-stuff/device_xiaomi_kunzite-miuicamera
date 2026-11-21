@@ -1,13 +1,13 @@
-From 828ebba510ef5b74339ad51e92b16a4b2d1c0f38 Mon Sep 17 00:00:00 2001
-From: kylieeXD <khayloaftck@gmail.com>
-Date: Sun, 8 Nov 2026 21:26:38 -0300
-Subject: [PATCH 08/13] Support third party galleries
+From 80b377ece4f0579a9817192a637e73ed1e60b713 Mon Sep 17 00:00:00 2001
+From: kleidione Freitas <kleidione@gmail.com>
+Date: Sat, 21 Nov 2026 14:30:24 -0300
+Subject: [PATCH 14/14] Support third party galleries intent only
 
+Signed-off-by: kleidione <kleidione@gmail.com>
 ---
  smali/A/c3.smali                      | 7 ++-----
  smali/com/android/camera/Camera.smali | 6 +++---
- smali_classes2/C9/d.smali             | 2 +-
- 3 files changed, 6 insertions(+), 9 deletions(-)
+ 2 files changed, 5 insertions(+), 8 deletions(-)
 
 diff --git a/smali/A/c3.smali b/smali/A/c3.smali
 index d00a217b..4232917f 100644
@@ -72,19 +72,6 @@ index bce1e858..d4c1347d 100644
  
      invoke-virtual {v4, p0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
  
-diff --git a/smali_classes2/C9/d.smali b/smali_classes2/C9/d.smali
-index 69e08e0d..3af96fd1 100644
---- a/smali_classes2/C9/d.smali
-+++ b/smali_classes2/C9/d.smali
-@@ -181,7 +181,7 @@
- 
-     if-nez v3, :cond_2
- 
--    const/4 v3, 0x4
-+    const/4 v3, 0x2
- 
-     :goto_2
-     if-eqz v3, :cond_3
 -- 
-2.56.0
+2.56.1
 
