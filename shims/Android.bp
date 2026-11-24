@@ -6,5 +6,6 @@
 
 cc_library {
     name: "libgui_shim_miuicamera",
-    srcs: ["libgui_shim_miuicamera.c"],
+    srcs: ["libgui_shim_miuicamera.cpp"],
+    shared_libs: ["libmedia_jni_utils"],
 }
