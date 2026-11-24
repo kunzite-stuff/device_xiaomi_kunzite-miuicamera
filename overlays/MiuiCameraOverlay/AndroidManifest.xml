@@ -6,5 +6,6 @@
     <overlay
         android:isStatic="true"
         android:priority="800"
+        android:targetName="OverlayableResources"
         android:targetPackage="com.android.camera" />
 </manifest>
