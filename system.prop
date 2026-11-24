@@ -1,6 +1,9 @@
 # Google Lens
 ro.com.google.lens.oem_camera_package=com.android.camera
 
+# Livephoto
+ro.product.camera.livephoto.support=3
+
 # Framework allowlists
 persist.vendor.camera.privapp.list=com.android.camera,org.lineageos.aperture
 
