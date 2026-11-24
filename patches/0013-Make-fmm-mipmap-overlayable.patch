@@ -1,0 +1,26 @@
+From b5949fefc8926d21b538ce6f3481993cfcddd69f Mon Sep 17 00:00:00 2001
+From: kleidione Freitas <kleidione@gmail.com>
+Date: Tue, 24 Nov 2026 07:16:49 -0300
+Subject: [PATCH 13/13] Make fmm mipmap overlayable
+
+Signed-off-by: kleidione <kleidione@gmail.com>
+---
+ res/values/overlayable.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/res/values/overlayable.xml b/res/values/overlayable.xml
+index d43f626e..68b0e084 100644
+--- a/res/values/overlayable.xml
++++ b/res/values/overlayable.xml
+@@ -2,7 +2,7 @@
+ <resources>
+     <overlayable name="OverlayableResources">
+         <policy type="public">
+-            <item type="drawable" name="gallery_logo_8k" />
++            <item type="mipmap" name="fmm" />
+         </policy>
+     </overlayable>
+ </resources>
+-- 
+2.56.1
+

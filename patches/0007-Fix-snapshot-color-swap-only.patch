@@ -1,21 +1,20 @@
-From c9890e6c4b3225a535840b37555c013204136637 Mon Sep 17 00:00:00 2001
+From 0ee038552042b3b94e398accc6bfdd24db60aa1b Mon Sep 17 00:00:00 2001
 From: heybyben <heybyben@gmail.com>
-Date: Sat, 14 Nov 2026 21:54:09 -0300
-Subject: [PATCH 09/14] Fix snapshot color swap only
+Date: Mon, 23 Nov 2026 19:34:54 -0300
+Subject: [PATCH 07/13] Fix snapshot color swap only
 
-Signed-off-by: kleidione <kleidione@gmail.com>
 ---
- .../imagecodec/impl/KunziteUvSwap.smali       | 481 ++++++++++++++++++
+ .../imagecodec/impl/KunziteUvSwap.smali       | 482 ++++++++++++++++++
  .../impl/VirtualCameraReprocessor.smali       |   2 +
- 2 files changed, 483 insertions(+)
- create mode 100644 smali_classes5/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
+ 2 files changed, 484 insertions(+)
+ create mode 100644 smali_classes8/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
 
-diff --git a/smali_classes5/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali b/smali_classes5/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
+diff --git a/smali_classes8/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali b/smali_classes8/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
 new file mode 100644
-index 00000000..9b6db83d
+index 00000000..71e55531
 --- /dev/null
-+++ b/smali_classes5/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
-@@ -0,0 +1,481 @@
++++ b/smali_classes8/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
+@@ -0,0 +1,482 @@
 +.class public final Lcom/xiaomi/camera/imagecodec/impl/KunziteUvSwap;
 +.super Ljava/lang/Object;
 +.source "KunziteUvSwap"
@@ -28,7 +27,8 @@ index 00000000..9b6db83d
 +    return-void
 +.end method
 +
-+.method public static swapChromaForVt(Landroid/media/Image;)V    .locals 9
++.method public static swapChromaForVt(Landroid/media/Image;)V
++    .locals 9
 +    .param p0, "image"    # Landroid/media/Image;
 +
 +    :try_start_0
@@ -497,11 +497,11 @@ index 00000000..9b6db83d
 +
 +    return p0
 +.end method
-diff --git a/smali_classes5/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali b/smali_classes5/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali
-index 3c11c9e0..581a7df4 100644
---- a/smali_classes5/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali
-+++ b/smali_classes5/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali
-@@ -1945,6 +1945,8 @@
+diff --git a/smali_classes8/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali b/smali_classes8/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali
+index a155a690..0642d2d5 100644
+--- a/smali_classes8/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali
++++ b/smali_classes8/com/xiaomi/camera/imagecodec/impl/VirtualCameraReprocessor.smali
+@@ -1856,6 +1856,8 @@
  
      check-cast v11, Landroid/media/Image;
  

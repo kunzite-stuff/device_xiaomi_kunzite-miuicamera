@@ -1,18 +1,18 @@
-From 21b63fd9a46da1cd588a8e9063fd498065cbf908 Mon Sep 17 00:00:00 2001
+From 58efbc6de09312d3eb1b146fc7c359f477df27aa Mon Sep 17 00:00:00 2001
 From: kleidione Freitas <kleidione@gmail.com>
-Date: Sun, 15 Nov 2026 07:15:32 -0300
-Subject: [PATCH 10/14] Swap chroma from plane[2] to keep V/U alignment
+Date: Mon, 23 Nov 2026 19:38:02 -0300
+Subject: [PATCH 08/13] Swap chroma from plane[2] to keep V/U alignment
 
 Signed-off-by: kleidione <kleidione@gmail.com>
 ---
  .../com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali       | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/smali_classes5/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali b/smali_classes5/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
-index 9b6db83d..b44c4683 100644
---- a/smali_classes5/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
-+++ b/smali_classes5/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
-@@ -107,7 +107,7 @@
+diff --git a/smali_classes8/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali b/smali_classes8/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
+index 71e55531..92fc4f12 100644
+--- a/smali_classes8/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
++++ b/smali_classes8/com/xiaomi/camera/imagecodec/impl/KunziteUvSwap.smali
+@@ -108,7 +108,7 @@
  
      if-ne v6, v7, :cond_planar
  

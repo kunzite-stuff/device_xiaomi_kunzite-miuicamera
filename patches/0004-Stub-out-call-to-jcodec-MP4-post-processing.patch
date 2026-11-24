@@ -1,20 +1,20 @@
-From fd28c8d81a6db985ce652f73e5b024469ed83907 Mon Sep 17 00:00:00 2001
+From 2e2e87e75f6277d8c3aa3aa6784c9e51b13e2b49 Mon Sep 17 00:00:00 2001
 From: AdarshGrewal <adarshgrewal@gmail.com>
-Date: Sun, 8 Nov 2026 21:15:36 -0300
-Subject: [PATCH 04/14] Stub out call to jcodec MP4 post-processing
+Date: Mon, 23 Nov 2026 09:54:55 -0300
+Subject: [PATCH 04/13] Stub out call to jcodec MP4 post-processing
 
 ---
- smali_classes6/Fj/e.smali | 270 +-------------------------------------
- 1 file changed, 1 insertion(+), 269 deletions(-)
+ smali_classes9/EB/e.smali | 269 +-------------------------------------
+ 1 file changed, 1 insertion(+), 268 deletions(-)
 
-diff --git a/smali_classes6/Fj/e.smali b/smali_classes6/Fj/e.smali
-index 068d694a..922aa20b 100644
---- a/smali_classes6/Fj/e.smali
-+++ b/smali_classes6/Fj/e.smali
-@@ -5,275 +5,7 @@
+diff --git a/smali_classes9/EB/e.smali b/smali_classes9/EB/e.smali
+index 718a4eb4..62e9af33 100644
+--- a/smali_classes9/EB/e.smali
++++ b/smali_classes9/EB/e.smali
+@@ -5,274 +5,7 @@
  
  # direct methods
- .method public static a(Ljava/io/File;LFj/b;)V
+ .method public static a(Ljava/io/File;LEB/b;)V
 -    .locals 9
 -    .annotation system Ldalvik/annotation/Throws;
 -        value = {
@@ -24,7 +24,7 @@ index 068d694a..922aa20b 100644
 +    .locals 0
  
 -    :try_start_0
--    new-instance v0, LAj/a;
+-    new-instance v0, LzB/a;
 -
 -    new-instance v1, Ljava/io/RandomAccessFile;
 -
@@ -36,12 +36,12 @@ index 068d694a..922aa20b 100644
 -
 -    move-result-object v1
 -
--    invoke-direct {v0, v1}, LAj/a;-><init>(Ljava/nio/channels/FileChannel;)V
+-    invoke-direct {v0, v1}, LzB/a;-><init>(Ljava/nio/channels/FileChannel;)V
 -    :try_end_0
 -    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 -
 -    :try_start_1
--    invoke-static {v0, p1}, LFj/a;->a(LAj/a;LFj/b;)Ljava/util/LinkedList;
+-    invoke-static {v0, p1}, LEB/a;->a(LzB/a;LEB/b;)Ljava/util/LinkedList;
 -
 -    move-result-object v1
 -    :try_end_1
@@ -49,7 +49,7 @@ index 068d694a..922aa20b 100644
 -
 -    if-nez v1, :cond_0
 -
--    invoke-static {v0}, LAj/b;->a(Ljava/nio/channels/ByteChannel;)V
+-    invoke-static {v0}, LzB/b;->a(Ljava/nio/channels/ByteChannel;)V
 -
 -    const/4 v0, 0x0
 -
@@ -72,21 +72,21 @@ index 068d694a..922aa20b 100644
 -
 -    move-result-object v2
 -
--    check-cast v2, Lzj/e;
+-    check-cast v2, LyB/e;
 -
--    iget-object v3, v2, Lzj/e;->a:Ljava/lang/Object;
+-    iget-object v3, v2, LyB/e;->a:Ljava/lang/Object;
 -
--    check-cast v3, LCj/g$a;
+-    check-cast v3, LBB/h$a;
 -
--    iget-object v2, v2, Lzj/e;->b:Ljava/lang/Object;
+-    iget-object v2, v2, LyB/e;->b:Ljava/lang/Object;
 -
 -    check-cast v2, Ljava/nio/ByteBuffer;
 -
--    iget-wide v3, v3, LCj/g$a;->a:J
+-    iget-wide v3, v3, LBB/h$a;->a:J
 -
--    invoke-virtual {v0, v3, v4}, LAj/a;->a(J)V
+-    invoke-virtual {v0, v3, v4}, LzB/a;->a(J)V
 -
--    invoke-virtual {v0, v2}, LAj/a;->write(Ljava/nio/ByteBuffer;)I
+-    invoke-virtual {v0, v2}, LzB/a;->write(Ljava/nio/ByteBuffer;)I
 -    :try_end_2
 -    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 -
@@ -95,10 +95,10 @@ index 068d694a..922aa20b 100644
 -    :catchall_0
 -    move-exception p0
 -
--    goto/16 :goto_5
+-    goto/16 :goto_4
 -
 -    :cond_1
--    invoke-static {v0}, LAj/b;->a(Ljava/nio/channels/ByteChannel;)V
+-    invoke-static {v0}, LzB/b;->a(Ljava/nio/channels/ByteChannel;)V
 -
 -    const/4 v0, 0x1
 -
@@ -108,7 +108,7 @@ index 068d694a..922aa20b 100644
 -    const/4 v0, 0x0
 -
 -    :try_start_3
--    new-instance v1, LAj/a;
+-    new-instance v1, LzB/a;
 -
 -    new-instance v2, Ljava/io/RandomAccessFile;
 -
@@ -120,12 +120,12 @@ index 068d694a..922aa20b 100644
 -
 -    move-result-object p0
 -
--    invoke-direct {v1, p0}, LAj/a;-><init>(Ljava/nio/channels/FileChannel;)V
+-    invoke-direct {v1, p0}, LzB/a;-><init>(Ljava/nio/channels/FileChannel;)V
 -    :try_end_3
 -    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 -
 -    :try_start_4
--    invoke-static {v1}, LCj/g;->b(LAj/a;)Ljava/util/ArrayList;
+-    invoke-static {v1}, LBB/h;->b(LzB/a;)Ljava/util/ArrayList;
 -
 -    move-result-object v2
 -
@@ -144,9 +144,9 @@ index 068d694a..922aa20b 100644
 -
 -    move-result-object v3
 -
--    check-cast v3, LCj/g$a;
+-    check-cast v3, LBB/h$a;
 -
--    iget-object v4, v3, LCj/g$a;->b:Lorg/jcodec/containers/mp4/boxes/b;
+-    iget-object v4, v3, LBB/h$a;->b:Lorg/jcodec/containers/mp4/boxes/b;
 -
 -    iget-object v4, v4, Lorg/jcodec/containers/mp4/boxes/b;->a:Ljava/lang/String;
 -
@@ -161,20 +161,20 @@ index 068d694a..922aa20b 100644
 -    move-object v0, v3
 -
 -    :cond_3
--    iget-wide v2, v0, LCj/g$a;->a:J
+-    iget-wide v2, v0, LBB/h$a;->a:J
 -    :try_end_4
 -    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 -
--    iget-object v4, v0, LCj/g$a;->b:Lorg/jcodec/containers/mp4/boxes/b;
+-    iget-object v4, v0, LBB/h$a;->b:Lorg/jcodec/containers/mp4/boxes/b;
 -
 -    :try_start_5
--    invoke-virtual {v1, v2, v3}, LAj/a;->a(J)V
+-    invoke-virtual {v1, v2, v3}, LzB/a;->a(J)V
 -
 -    iget-wide v2, v4, Lorg/jcodec/containers/mp4/boxes/b;->b:J
 -
 -    long-to-int v2, v2
 -
--    invoke-static {v1, v2}, LAj/b;->b(Ljava/nio/channels/ByteChannel;I)Ljava/nio/ByteBuffer;
+-    invoke-static {v1, v2}, LzB/b;->b(Ljava/nio/channels/ByteChannel;I)Ljava/nio/ByteBuffer;
 -
 -    move-result-object v2
 -
@@ -182,21 +182,21 @@ index 068d694a..922aa20b 100644
 -
 -    move-result-object v3
 -
--    sget-object v5, LCj/b;->b:LCj/b;
+-    sget-object v5, LBB/b;->b:LBB/b;
 -
--    invoke-static {v2, v3, v5}, LCj/c;->a(Ljava/nio/ByteBuffer;Lorg/jcodec/containers/mp4/boxes/b;LCj/b;)Lorg/jcodec/containers/mp4/boxes/Box;
+-    invoke-static {v2, v3, v5}, LBB/c;->a(Ljava/nio/ByteBuffer;Lorg/jcodec/containers/mp4/boxes/b;LBB/b;)Lorg/jcodec/containers/mp4/boxes/Box;
 -
 -    move-result-object v2
 -
 -    check-cast v2, Lorg/jcodec/containers/mp4/boxes/MovieBox;
 -
--    invoke-interface {p1, v2}, LFj/b;->b(Lorg/jcodec/containers/mp4/boxes/MovieBox;)V
+-    invoke-interface {p1, v2}, LEB/b;->b(Lorg/jcodec/containers/mp4/boxes/MovieBox;)V
 -
 -    iget-wide v3, v4, Lorg/jcodec/containers/mp4/boxes/b;->b:J
 -    :try_end_5
 -    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 -
--    iget-wide v5, v0, LCj/g$a;->a:J
+-    iget-wide v5, v0, LBB/h$a;->a:J
 -
 -    add-long/2addr v3, v5
 -
@@ -213,7 +213,7 @@ index 068d694a..922aa20b 100644
 -
 -    add-long/2addr v5, v3
 -
--    invoke-virtual {v1, v5, v6}, LAj/a;->a(J)V
+-    invoke-virtual {v1, v5, v6}, LzB/a;->a(J)V
 -
 -    sget-object p1, Lorg/jcodec/containers/mp4/boxes/b;->d:[B
 -
@@ -221,13 +221,13 @@ index 068d694a..922aa20b 100644
 -
 -    move-result-object p1
 -
--    invoke-virtual {v1, p1}, LAj/a;->write(Ljava/nio/ByteBuffer;)I
+-    invoke-virtual {v1, p1}, LzB/a;->write(Ljava/nio/ByteBuffer;)I
 -
 -    invoke-virtual {p0}, Ljava/nio/channels/FileChannel;->size()J
 -
 -    move-result-wide p0
 -
--    invoke-virtual {v1, p0, p1}, LAj/a;->a(J)V
+-    invoke-virtual {v1, p0, p1}, LzB/a;->a(J)V
 -
 -    goto :goto_2
 -
@@ -239,7 +239,7 @@ index 068d694a..922aa20b 100644
 -    goto :goto_3
 -
 -    :cond_4
--    invoke-virtual {v1, v5, v6}, LAj/a;->a(J)V
+-    invoke-virtual {v1, v5, v6}, LzB/a;->a(J)V
 -
 -    :goto_2
 -    invoke-virtual {v2}, Lorg/jcodec/containers/mp4/boxes/NodeBox;->estimateSize()I
@@ -258,24 +258,23 @@ index 068d694a..922aa20b 100644
 -
 -    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 -
--    invoke-virtual {v1, p0}, LAj/a;->write(Ljava/nio/ByteBuffer;)I
+-    invoke-virtual {v1, p0}, LzB/a;->write(Ljava/nio/ByteBuffer;)I
 -    :try_end_6
 -    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 -
--    invoke-static {v1}, LAj/b;->a(Ljava/nio/channels/ByteChannel;)V
+-    invoke-static {v1}, LzB/b;->a(Ljava/nio/channels/ByteChannel;)V
 -
--    goto :goto_4
+-    return-void
 -
 -    :catchall_2
 -    move-exception p0
 -
 -    :goto_3
--    invoke-static {v0}, LAj/b;->a(Ljava/nio/channels/ByteChannel;)V
+-    invoke-static {v0}, LzB/b;->a(Ljava/nio/channels/ByteChannel;)V
 -
 -    throw p0
 -
 -    :cond_5
--    :goto_4
      return-void
 -
 -    :catchall_3
@@ -283,8 +282,8 @@ index 068d694a..922aa20b 100644
 -
 -    const/4 v0, 0x0
 -
--    :goto_5
--    invoke-static {v0}, LAj/b;->a(Ljava/nio/channels/ByteChannel;)V
+-    :goto_4
+-    invoke-static {v0}, LzB/b;->a(Ljava/nio/channels/ByteChannel;)V
 -
 -    throw p0
  .end method
